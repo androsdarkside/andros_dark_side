@@ -1,35 +1,34 @@
-let games = [];
+let videos = [];
 
-// Charger la liste des jeux depuis le fichier games.json
-fetch('games.json')
+// On charge maintenant le fichier videos.json
+fetch('videos.json')
     .then(response => response.json())
     .then(data => {
-        games = data;
-        displayGames(games);
+        videos = data;
+        displayVideos(videos);
     })
-    .catch(error => console.error('Erreur lors du chargement des jeux:', error));
+    .catch(error => console.error('Erreur lors du chargement des vidéos:', error));
 
-// Fonction pour afficher les jeux
-function displayGames(gamesList) {
-    const grid = document.getElementById('gamesGrid');
+function displayVideos(videoList) {
+    const grid = document.getElementById('videosGrid');
     grid.innerHTML = '';
 
-    if (gamesList.length === 0) {
-        grid.innerHTML = '<p>Aucun jeu trouvé.</p>';
+    if (videoList.length === 0) {
+        grid.innerHTML = '<p>Aucune vidéo trouvée.</p>';
         return;
     }
 
-    gamesList.forEach(game => {
+    videoList.forEach(video => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <img src="${game.image}" alt="${game.title}">
+            <img src="${video.thumbnail}" alt="Miniature de ${video.title}">
             <div class="card-body">
-                <div class="card-genre">${game.genre}</div>
-                <h3 class="card-title">${game.title}</h3>
-                <p class="card-desc">${game.description}</p>
-                <a href="${game.downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download">
-                    Télécharger
+                <div class="card-date">${video.date}</div>
+                <h3 class="card-title">${video.title}</h3>
+                <p class="card-desc">${video.description}</p>
+                <a href="${video.videoUrl}" target="_blank" rel="noopener noreferrer" class="btn-watch">
+                    ▶ Regarder la vidéo
                 </a>
             </div>
         `;
@@ -37,12 +36,11 @@ function displayGames(gamesList) {
     });
 }
 
-// Recherche instantanée
 document.getElementById('searchInput').addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    const filteredGames = games.filter(game => 
-        game.title.toLowerCase().includes(searchTerm) || 
-        game.genre.toLowerCase().includes(searchTerm)
+    const filteredVideos = videos.filter(video => 
+        video.title.toLowerCase().includes(searchTerm) || 
+        video.description.toLowerCase().includes(searchTerm)
     );
-    displayGames(filteredGames);
+    displayVideos(filteredVideos);
 });
