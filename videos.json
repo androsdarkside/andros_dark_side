@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Ma dernière vidéo géniale",
+    "date": "28 Août 2026",
+    "thumbnail": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80",
+    "description": "Dans cette vidéo, je vous montre comment créer un site web gratuit avec GitHub Pages.",
+    "videoUrl": "https://youtube.com/"
+  },
+  {
+    "id": 2,
+    "title": "Tutoriel complet - Astuces tech",
+    "date": "15 Août 2026",
+    "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
+    "description": "Découvrez mes meilleures astuces pour optimiser votre ordinateur.",
+    "videoUrl": "https://youtube.com/"
+  }
+]
