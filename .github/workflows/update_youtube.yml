@@ -1,0 +1,35 @@
+name: Update YouTube Videos
+
+on:
+  schedule:
+    # Le script se lance automatiquement tous les jours à minuit
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Permet de lancer l'action manuellement avec un bouton
+
+jobs:
+  update-videos:
+    runs-on: ubuntu-latest
+    
+    # Donne l'autorisation au robot d'écrire sur votre dépôt
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Récupérer les fichiers du site
+        uses: actions/checkout@v3
+
+      - name: Préparer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Lancer le script de mise à jour
+        run: python update_videos.py
+
+      - name: Sauvegarder sur le site
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add videos.json
+          git commit -m "Mise à jour automatique des vidéos YouTube" || exit 0
+          git push
