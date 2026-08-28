@@ -1,29 +1,37 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Chaîne YouTube</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+<!-- 1. REMPLACEZ LE HEADER ACTUEL PAR CELUI-CI -->
     <header>
-        <div class="logo">ANDROS DARK SIDE</div>
-        <input type="text" id="searchInput" placeholder="Recherche...">
+        <div class="logo">▶️ Studio Andros</div>
+        <nav class="menu">
+            <a href="#videos">Mes Vidéos</a>
+            <a href="#affiliation">Matériel</a>
+            <!-- Nouveau bouton de don dans le menu -->
+            <a href="#don" class="btn-don-menu">💖 Me Soutenir</a> 
+        </nav>
     </header>
 
     <main>
-        <h2>Dernières vidéos</h2>
-        <div id="videosGrid" class="videos-grid">
-            <!-- Les vidéos s'afficheront ici -->
-        </div>
+        <!-- (Laissez vos sections Vidéos et Affiliation ici telles quelles) -->
+
+        <!-- 2. AJOUTEZ CETTE NOUVELLE SECTION JUSTE AVANT LA BALISE </main> -->
+        <section id="don" class="support-section">
+            <h2>Soutenir mon travail</h2>
+            <p>Si mes tutoriels ou mes projets vous aident, vous pouvez soutenir la chaîne pour m'aider à acheter de nouveaux équipements !</p>
+            <div class="support-buttons">
+                <!-- Remplacez les liens par vos vrais liens (Ko-fi, Patreon, Tipeee, etc.) -->
+                <a href="https://ko-fi.com/" target="_blank" class="btn-support kofi">☕ Offrir un café (Ko-fi)</a>
+                <a href="https://patreon.com/" target="_blank" class="btn-support patreon">🧡 Patreon</a>
+            </div>
+        </section>
     </main>
 
+    <!-- 3. REMPLACEZ LE FOOTER ACTUEL PAR CELUI-CI -->
     <footer>
-        <p>&copy; 2026 Studio Andros - Retrouvez toutes mes vidéos sur YouTube.</p>
+        <div class="social-links">
+            <!-- Remplacez les # par les liens de vos réseaux -->
+            <a href="https://www.youtube.com/@androsxo" target="_blank">YouTube</a>
+            <a href="#" target="_blank">X (Twitter)</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+        <p>&copy; 2026 Studio Andros - Certains liens sur ce site sont des liens d'affiliation.</p>
     </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
