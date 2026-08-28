@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Aventure Chrono",
+    "genre": "Aventure / RPG",
+    "image": "https://via.placeholder.com/300x180?text=Jeu+1",
+    "description": "Un jeu d'aventure épique. Téléchargez le fichier via le lien externe.",
+    "downloadUrl": "https://mega.nz/lien-de-telechargement-1"
+  },
+  {
+    "id": 2,
+    "title": "Space Shooter 2D",
+    "genre": "Arcade",
+    "image": "https://via.placeholder.com/300x180?text=Jeu+2",
+    "description": "Un shoot'em up spatial rythmé et rétro.",
+    "downloadUrl": "https://drive.google.com/lien-de-telechargement-2"
+  }
+]
